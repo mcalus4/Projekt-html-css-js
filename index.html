@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="UTF-8" />
+		<title>WSPINACZKA</title>
+		<link rel="Stylesheet" type="text/css" href="style.css"/>
+	</head>
+   <body>
+		<header>
+			<h1>WSPINACZKA</h1>
+		</header>
+			
+		<nav>
+			<ol>																		<!-- do nawigacji i poruszania sie po stronie -->
+				<li><a class="active" href="index.html">Strona glowna</a></li>
+				<li><a href="sprzet.html">Sprzet</a></li>
+ 			</ol> 
+		</nav>
+		<main>
+			<p class="paragraf"><br>Kliknij zdjęcie ze mną </p>
+			<p class="paragraf">Dziś jest 
+			<script>	<!-- wyswietla aktualna date -->
+			var d = new Date();
+			document.write(
+			d.getDate().toString().padStart(2, "0") + "." +
+			((d.getMonth()+1).toString().padStart(2, "0")) + "." +
+			(d.getFullYear()).toString())
+						  
+			</script>
+			</p>
+			
+			
+			<script> <!-- funkcja dla przycisku zeby pokazac czas -->
+			function showTime() {
+				var d = new Date();
+				document.getElementById("czas").innerHTML = "Jest " + (d.getHours().toString().padStart(2, "0")) + ":" + ((d.getMinutes()+1).toString().padStart(2, "0"));
+				document.getElementById("czas").style.display = "block";
+				document.getElementById("showTimeButton").style.display = "none";
+				document.getElementById("hideTimeButton").style.display = "block";
+			}
+			</script>
+			<script> <!-- funkcja dla przycisku zeby ukryc czas -->
+			function hideTime() {
+				document.getElementById("czas").style.display = "none"; 
+				document.getElementById("showTimeButton").style.display = "block";
+				document.getElementById("hideTimeButton").style.display = "none";
+			}
+			</script>
+			<p class="paragraf">
+			Chcesz wiedzieć która godzina? 
+			<button id="showTimeButton" onclick="showTime()">Kliknij mnie</button>	<!-- przycik pokaz czas -->
+			<button id="hideTimeButton" onclick="hideTime()" style="display:none">Ukryj czas</button> <!-- przycisk ukryj czas -->
+			</p>
+			<div id="czas" class="paragraf"></div>
+			
+			
+			<article>
+				<h2>Ciekawe źródła na temat wspinaczki:<br></h2>
+				<a href="https://pl.wikipedia.org/wiki/Wspinaczka" ><u>Wspinaczka</u></a><br>
+				<a href="https://pl.wikipedia.org/wiki/Wy%C5%BCyna_Krakowsko-Cz%C4%99stochowska">Jura Krakowsko-Czestochowska</a><br>
+				<a href="https://pl.wikipedia.org/wiki/G%C3%B3ry_Sokole">Sokoliki</a><br>
+				<a href="https://pl.wikipedia.org/wiki/Wspinaczka" ><u>Ciekawe miejsca</u></a><br>
+			</article>
+			
+			<article>
+			<h2> Oto najciekawsze, moim zdaniem, miejsca, w ktorych warto sie wspinac.</h2>
+			<h2>TATRY</h2>
+			
+				<a href="img/1.jpg"><img src="img/1.jpg" class="obrazek" alt=""></a> 
+				<a href="img/2.jpg"><img src="img/2.jpg" class="obrazek" alt=""></a> 
+				<a href="img/3.jpg"><img src="img/3.jpg" class="obrazek" alt=""></a> 
+				<a href="img/4.jpg"><img src="img/4.jpg" class="obrazek" alt=""></a> 
+				<a href="img/5.jpg"><img src="img/5.jpg" class="obrazek" alt=""></a> 
+				<div style="clear: both"></div> <!-- zeby reszta rzeczy byla ponizej -->
+			</article>
+		
+			<article>
+				<h2>O mnie<br></h2>
+				<img src="img/6.jpg" onclick="window.alert('Niespodzianka')" class="obrazek1" alt=""><br>
+				Michalina Całus<br>
+				numer indeksu: 266377<br>
+			</article>
+			
+		
+		</main>
+	
+		<footer>Copyright 2020, Michalina Calus gr. 2, 2020</footer>
+	</body>
+</html>
